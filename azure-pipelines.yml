@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Pay-As-You-Go(4eac2d1c-ba1e-435f-84ff-37c97876f66b)'
+    subscriptionId: '4eac2d1c-ba1e-435f-84ff-37c97876f66b'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'AnudwebappRG'
+    location: 'West Central US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/AnudeepDuddu/webap001/main/template/template.json'
+    csmParametersFileLink: 'https://raw.githubusercontent.com/AnudeepDuddu/webap001/main/template/parameters.json'
+    deploymentMode: 'Incremental'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
