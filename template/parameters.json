@@ -6,13 +6,13 @@
             "value": "4eac2d1c-ba1e-435f-84ff-37c97876f66b"
         },
         "name": {
-            "value": "Webap001"
+            "value": "Webap002"
         },
         "location": {
             "value": "Central US"
         },
         "hostingPlanName": {
-            "value": "ASP-AnudwebappRG-87da"
+            "value": "ASP-AnudwebappRG-HP1"
         },
         "serverFarmResourceGroup": {
             "value": "AnudwebappRG"
